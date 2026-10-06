@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+  viewBox="0 0 301.33 21"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="ORCID"
+>
+
+  <style>
+    .mono {
+      font-family:
+        ui-monospace,
+        "SFMono-Regular",
+        "SF Mono",
+        Menlo,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 3.5px;
+      fill: #000000;
+    }
+  </style>
+
+  <text
+    class="mono"
+    x="150.665"
+    y="20"
+    text-anchor="middle"
+  >
+    ORCID
+  </text>
+
+</svg>
