@@ -4,7 +4,7 @@
      HEADER + CONTACT LINKS
 ========================================================= -->
 
-<img src="assets/header.svg" width="100%" align="top" alt="Antonio González — Bioinformatician"/><a href="mailto:mimail@csic.es"><img src="assets/email.svg" width="30.13%" align="top" alt="Email"/></a><a href="https://orcid.org/0009-0007-2010-3698"><img src="assets/orcid.svg" width="30.13%" align="top" alt="ORCID"/></a><a href="https://www.linkedin.com/in/antonio-gonzález-sánchez-8013411a4"><img src="assets/linkedin.svg" width="30.13%" align="top" alt="LinkedIn"/></a>
+<img src="assets/header.svg" width="100%" align="top" alt="Antonio González — Bioinformatician"/><a href="mailto:antonio.gonzalez.sanchez@csic.es"><img src="assets/email.svg" width="30.13%" align="top" alt="Email"/></a><a href="https://orcid.org/0009-0007-2010-3698"><img src="assets/orcid.svg" width="30.13%" align="top" alt="ORCID"/></a><a href="https://www.linkedin.com/in/antonio-gonzález-sánchez-8013411a4"><img src="assets/linkedin.svg" width="30.13%" align="top" alt="LinkedIn"/></a>
 
 </div>
 

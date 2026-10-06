@@ -74,26 +74,21 @@
 
 
     /* ======================================================
-       TOP LINE ANIMATION
+       TOP + BOTTOM LINES ANIMATION
+       Both lines appear first, at the same time
     ======================================================= */
 
-    .top-rule-animated {
+    .top-rule-animated,
+    .bottom-rule-animated {
       stroke: var(--rule);
       stroke-width: 1;
       fill: none;
-
       stroke-dasharray: 1;
       stroke-dashoffset: 1;
-
-      animation:
-        draw-top-rule
-        0.75s
-        ease-out
-        0.15s
-        forwards;
+      animation: draw-rule 0.75s ease-out 0.15s forwards;
     }
 
-    @keyframes draw-top-rule {
+    @keyframes draw-rule {
       from {
         stroke-dashoffset: 1;
       }
@@ -126,7 +121,7 @@
         type-name
         1.20s
         steps(16, end)
-        1.00s
+        1.05s
         forwards;
     }
 
@@ -145,32 +140,20 @@
        TYPEWRITER CURSOR
     ======================================================= */
 
-    /*
-      The cursor uses EXACTLY:
-      - the same start time
-      - the same duration
-      - the same 16 steps
-      - the same total distance
-
-      Therefore it stays attached to the text reveal.
-    */
-
     .name-cursor {
       fill: var(--text);
-
       opacity: 0;
 
       animation:
         cursor-move
         1.20s
         steps(16, end)
-        1.00s
+        1.05s
         forwards,
-
         cursor-visibility
         1.20s
         linear
-        1.00s
+        1.05s
         forwards;
     }
 
@@ -185,7 +168,6 @@
     }
 
     @keyframes cursor-visibility {
-
       0% {
         opacity: 1;
       }
@@ -206,7 +188,6 @@
 
     .intro-line {
       opacity: 0;
-
       animation:
         reveal-line
         0.45s
@@ -215,15 +196,15 @@
     }
 
     .intro-line-1 {
-      animation-delay: 2.45s;
+      animation-delay: 2.50s;
     }
 
     .intro-line-2 {
-      animation-delay: 2.70s;
+      animation-delay: 2.75s;
     }
 
     .intro-line-3 {
-      animation-delay: 2.95s;
+      animation-delay: 3.00s;
     }
 
     @keyframes reveal-line {
@@ -233,37 +214,6 @@
 
       to {
         opacity: 1;
-      }
-    }
-
-
-    /* ======================================================
-       BOTTOM LINE
-    ======================================================= */
-
-    .bottom-rule-animated {
-      stroke: var(--rule);
-      stroke-width: 1;
-      fill: none;
-
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-
-      animation:
-        draw-bottom-rule
-        0.75s
-        ease-out
-        3.45s
-        forwards;
-    }
-
-    @keyframes draw-bottom-rule {
-      from {
-        stroke-dashoffset: 1;
-      }
-
-      to {
-        stroke-dashoffset: 0;
       }
     }
 
@@ -314,7 +264,6 @@
   ======================================================= -->
 
   <g clip-path="url(#name-typewriter-clip)">
-
     <text
       class="mono name"
       x="48"
@@ -325,7 +274,6 @@
     >
       Antonio González
     </text>
-
   </g>
 
 
