@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+  viewBox="0 0 1000 420"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="Tools — languages, workflow development, containers and execution"
+>
+
+  <style>
+    :root {
+      --text: #ffffff;
+      --rule: #ffffff;
+    }
+
+    .mono {
+      font-family:
+        ui-monospace,
+        "SFMono-Regular",
+        "SF Mono",
+        Menlo,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      fill: var(--text);
+    }
+
+    .section-title {
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+
+    .tool-text {
+      font-size: 18.5px;
+      font-weight: 400;
+    }
+
+    .category {
+      font-weight: 600;
+    }
+
+    .rule {
+      stroke: var(--rule);
+      stroke-width: 1;
+      fill: none;
+    }
+
+    .node {
+      fill: var(--text);
+    }
+
+    /* ======================================================
+       HEADER LINE ANIMATION
+    ======================================================= */
+
+    .header-line {
+      stroke: var(--rule);
+      stroke-width: 1;
+      fill: none;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw-header-line 0.75s ease-out 0.15s forwards;
+    }
+
+    @keyframes draw-header-line {
+      from {
+        stroke-dashoffset: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* ======================================================
+       TOOLS VERTICAL LINE ANIMATION
+    ======================================================= */
+
+    .tools-rail {
+      stroke: var(--rule);
+      stroke-width: 1;
+      fill: none;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw-tools-rail 1.15s ease-out 1.00s forwards;
+    }
+
+    @keyframes draw-tools-rail {
+      from {
+        stroke-dashoffset: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* ======================================================
+       TOOL ITEMS ANIMATION
+    ======================================================= */
+
+    .tool-item {
+      opacity: 0;
+      animation: reveal-tool-item 0.22s ease-out forwards;
+    }
+
+    @keyframes reveal-tool-item {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .tool-1 {
+      animation-delay: 1.32s;
+    }
+
+    .tool-2 {
+      animation-delay: 1.62s;
+    }
+
+    .tool-3 {
+      animation-delay: 1.92s;
+    }
+
+    .tool-4 {
+      animation-delay: 2.22s;
+    }
+  </style>
+
+
+  <!-- ======================================================
+       HEADER
+  ======================================================= -->
+
+  <text
+    class="mono section-title"
+    x="48"
+    y="42"
+  >
+    &gt; / 03 — TOOLS
+  </text>
+
+  <line
+    class="header-line"
+    x1="286"
+    y1="34"
+    x2="952"
+    y2="34"
+    pathLength="1"
+  />
+
+
+  <!-- ======================================================
+       TOOL LIST STRUCTURE
+  ======================================================= -->
+
+  <line
+    class="tools-rail"
+    x1="48"
+    y1="115"
+    x2="48"
+    y2="350"
+    pathLength="1"
+  />
+
+
+  <!-- ======================================================
+       LANGUAGES
+  ======================================================= -->
+
+  <g class="tool-item tool-1">
+    <circle
+      class="node"
+      cx="48"
+      cy="145"
+      r="5.25"
+    />
+
+    <text
+      class="mono tool-text"
+      x="80"
+      y="151"
+    >
+      <tspan class="category">Languages</tspan>
+      <tspan> — Python · R · Bash · Groovy</tspan>
+    </text>
+  </g>
+
+
+  <!-- ======================================================
+       WORKFLOW DEVELOPMENT
+  ======================================================= -->
+
+  <g class="tool-item tool-2">
+    <circle
+      class="node"
+      cx="48"
+      cy="205"
+      r="5.25"
+    />
+
+    <text
+      class="mono tool-text"
+      x="80"
+      y="211"
+    >
+      <tspan class="category">Workflow development</tspan>
+      <tspan> — Nextflow</tspan>
+    </text>
+  </g>
+
+
+  <!-- ======================================================
+       CONTAINERS & ENVIRONMENTS
+  ======================================================= -->
+
+  <g class="tool-item tool-3">
+    <circle
+      class="node"
+      cx="48"
+      cy="265"
+      r="5.25"
+    />
+
+    <text
+      class="mono tool-text"
+      x="80"
+      y="271"
+    >
+      <tspan class="category">Containers &amp; environments</tspan>
+      <tspan> — Conda · Docker · Singularity</tspan>
+    </text>
+  </g>
+
+
+  <!-- ======================================================
+       DEVELOPMENT & EXECUTION
+  ======================================================= -->
+
+  <g class="tool-item tool-4">
+    <circle
+      class="node"
+      cx="48"
+      cy="325"
+      r="5.25"
+    />
+
+    <text
+      class="mono tool-text"
+      x="80"
+      y="331"
+    >
+      <tspan class="category">Development &amp; execution</tspan>
+      <tspan> — Git · SLURM</tspan>
+    </text>
+  </g>
+
+</svg>

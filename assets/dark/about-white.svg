@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+  viewBox="0 -16 1000 636"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="About me — bioinformatics research and timeline"
+>
+
+  <style>
+    :root {
+      --text: #ffffff;
+      --rule: #ffffff;
+    }
+
+    .mono {
+      font-family:
+        ui-monospace,
+        "SFMono-Regular",
+        "SF Mono",
+        Menlo,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      fill: var(--text);
+    }
+
+    .section-title {
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+
+    .body {
+      font-size: 18.5px;
+      font-weight: 400;
+    }
+
+    .timeline-label {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .timeline-year {
+      font-size: 9.5px;
+      font-weight: 400;
+    }
+
+    .rule {
+      stroke: var(--rule);
+      stroke-width: 1;
+      fill: none;
+    }
+
+    .node {
+      fill: var(--text);
+    }
+
+    /* ======================================================
+       HEADER LINE ANIMATION
+    ======================================================= */
+
+    .header-line {
+      stroke: var(--rule);
+      stroke-width: 1;
+      fill: none;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw-header-line 0.75s ease-out 0.15s forwards;
+    }
+
+    @keyframes draw-header-line {
+      from {
+        stroke-dashoffset: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* ======================================================
+       BODY TEXT INTRO ANIMATION
+    ======================================================= */
+
+    .body-line {
+      opacity: 0;
+      animation: reveal-body-line 0.45s ease-out forwards;
+    }
+
+    .body-line-1 { animation-delay: 1.00s; }
+    .body-line-2 { animation-delay: 1.22s; }
+    .body-line-3 { animation-delay: 1.44s; }
+    .body-line-4 { animation-delay: 1.66s; }
+    .body-line-5 { animation-delay: 1.88s; }
+
+    @keyframes reveal-body-line {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ======================================================
+       TIMELINE MAIN LINE
+    ======================================================= */
+
+    .timeline-mainline {
+      stroke: var(--rule);
+      stroke-width: 1;
+      fill: none;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw-timeline-line 1.60s ease-out 2.35s forwards;
+    }
+
+    @keyframes draw-timeline-line {
+      from {
+        stroke-dashoffset: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* ======================================================
+       TIMELINE VERTICAL LINES
+    ======================================================= */
+
+    .timeline-branch {
+      stroke: var(--rule);
+      stroke-width: 1;
+      fill: none;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation-name: draw-branch;
+      animation-duration: 0.20s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes draw-branch {
+      from {
+        stroke-dashoffset: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .branch-2022 { animation-delay: 2.50s; }
+    .branch-2023a { animation-delay: 2.73s; }
+    .branch-2023b { animation-delay: 2.96s; }
+    .branch-2024 { animation-delay: 3.19s; }
+    .branch-2025 { animation-delay: 3.42s; }
+    .branch-2026 { animation-delay: 3.65s; }
+    .branch-2027 { animation-delay: 3.88s; }
+
+    /* ======================================================
+       TIMELINE POINTS + TEXT
+    ======================================================= */
+
+    .timeline-content {
+      opacity: 0;
+      animation: reveal-timeline-content 0.20s ease-out forwards;
+    }
+
+    @keyframes reveal-timeline-content {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .content-2022 { animation-delay: 2.68s; }
+    .content-2023a { animation-delay: 2.91s; }
+    .content-2023b { animation-delay: 3.14s; }
+    .content-2024 { animation-delay: 3.37s; }
+    .content-2025 { animation-delay: 3.60s; }
+    .content-2026 { animation-delay: 3.83s; }
+    .content-2027 { animation-delay: 4.06s; }
+
+    /* ======================================================
+       ANIMATED 2027 NODE
+    ======================================================= */
+
+    .pulse-ring {
+      fill: none;
+      stroke: var(--text);
+      stroke-width: 1.4;
+      transform-box: fill-box;
+      transform-origin: center;
+      opacity: 0;
+      animation:
+        reveal-pulse 0.01s linear 4.06s forwards,
+        timeline-pulse 1s ease-out 4.06s infinite;
+    }
+
+    @keyframes reveal-pulse {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes timeline-pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0;
+      }
+
+      12% {
+        opacity: 0.75;
+      }
+
+      100% {
+        transform: scale(3);
+        opacity: 0;
+      }
+    }
+  </style>
+
+
+  <!-- ======================================================
+       HEADER
+  ======================================================= -->
+
+  <text
+    class="mono section-title"
+    x="48"
+    y="42"
+  >
+    &gt; / 01 — ABOUT ME
+  </text>
+
+  <line
+    class="header-line"
+    x1="322"
+    y1="34"
+    x2="952"
+    y2="34"
+    pathLength="1"
+  />
+
+
+  <!-- ======================================================
+       ABOUT TEXT
+  ======================================================= -->
+
+  <text
+    class="mono body"
+    x="48"
+    y="116"
+  >
+    <tspan
+      class="body-line body-line-1"
+      x="48"
+      dy="0"
+      textLength="904"
+      lengthAdjust="spacing"
+    >
+      I'm a bioinformatician working on the computational analysis of sRNA-mediated
+    </tspan>
+
+    <tspan
+      class="body-line body-line-2"
+      x="48"
+      dy="32"
+      textLength="904"
+      lengthAdjust="spacing"
+    >
+      stress responses in plants, with a particular focus on miRNAs. I'm currently in
+    </tspan>
+
+    <tspan
+      class="body-line body-line-3"
+      x="48"
+      dy="32"
+      textLength="904"
+      lengthAdjust="spacing"
+    >
+      the final stretch of my PhD, and along the way, working with large-scale sRNA-seq
+    </tspan>
+
+    <tspan
+      class="body-line body-line-4"
+      x="48"
+      dy="32"
+      textLength="904"
+      lengthAdjust="spacing"
+    >
+      datasets has pushed me towards HPC and reproducible workflow development. More recently,
+    </tspan>
+
+    <tspan
+      class="body-line body-line-5"
+      x="48"
+      dy="32"
+    >
+      I've begun exploring machine learning as a new direction within this work.
+    </tspan>
+  </text>
+
+
+  <!-- ======================================================
+       TIMELINE MAIN LINE
+  ======================================================= -->
+
+  <line
+    class="timeline-mainline"
+    x1="48"
+    y1="480"
+    x2="952"
+    y2="480"
+    pathLength="1"
+  />
+
+
+  <!-- ======================================================
+       2022 — JOINED ncRNAlab
+  ======================================================= -->
+
+  <line
+    class="timeline-branch branch-2022"
+    x1="100"
+    y1="480"
+    x2="100"
+    y2="418"
+    pathLength="1"
+  />
+
+  <g class="timeline-content content-2022">
+    <circle
+      class="node"
+      cx="100"
+      cy="480"
+      r="5.25"
+    />
+
+    <text
+      class="mono timeline-label"
+      x="100"
+      y="391"
+      text-anchor="middle"
+    >
+      Joined ncRNAlab
+    </text>
+
+    <text
+      class="mono timeline-year"
+      x="100"
+      y="508"
+      text-anchor="middle"
+    >
+      2022
+    </text>
+  </g>
+
+
+  <!-- ======================================================
+       2023 — sRNA-seq ANALYSIS
+  ======================================================= -->
+
+  <line
+    class="timeline-branch branch-2023a"
+    x1="235"
+    y1="480"
+    x2="235"
+    y2="542"
+    pathLength="1"
+  />
+
+  <g class="timeline-content content-2023a">
+    <circle
+      class="node"
+      cx="235"
+      cy="480"
+      r="5.25"
+    />
+
+    <text
+      class="mono timeline-year"
+      x="235"
+      y="458"
+      text-anchor="middle"
+    >
+      2023
+    </text>
+
+    <text
+      class="mono timeline-label"
+      x="235"
+      y="579"
+      text-anchor="middle"
+    >
+      sRNA-seq analysis
+    </text>
+  </g>
+
+
+  <!-- ======================================================
+       2023 — SCALABLE ANALYSIS ON HPC
+  ======================================================= -->
+
+  <line
+    class="timeline-branch branch-2023b"
+    x1="365"
+    y1="480"
+    x2="365"
+    y2="418"
+    pathLength="1"
+  />
+
+  <g class="timeline-content content-2023b">
+    <circle
+      class="node"
+      cx="365"
+      cy="480"
+      r="5.25"
+    />
+
+    <text
+      class="mono timeline-label"
+      x="365"
+      y="379"
+      text-anchor="middle"
+    >
+      scalable analysis
+    </text>
+
+    <text
+      class="mono timeline-label"
+      x="365"
+      y="402"
+      text-anchor="middle"
+    >
+      on HPC
+    </text>
+
+    <text
+      class="mono timeline-year"
+      x="365"
+      y="508"
+      text-anchor="middle"
+    >
+      2023
+    </text>
+  </g>
+
+
+  <!-- ======================================================
+       2024 — REPRODUCIBLE WORKFLOWS
+  ======================================================= -->
+
+  <line
+    class="timeline-branch branch-2024"
+    x1="495"
+    y1="480"
+    x2="495"
+    y2="542"
+    pathLength="1"
+  />
+
+  <g class="timeline-content content-2024">
+    <circle
+      class="node"
+      cx="495"
+      cy="480"
+      r="5.25"
+    />
+
+    <text
+      class="mono timeline-year"
+      x="495"
+      y="458"
+      text-anchor="middle"
+    >
+      2024
+    </text>
+
+    <text
+      class="mono timeline-label"
+      x="495"
+      y="570"
+      text-anchor="middle"
+    >
+      Reproducible workflows
+    </text>
+
+    <text
+      class="mono timeline-label"
+      x="495"
+      y="593"
+      text-anchor="middle"
+    >
+      with Nextflow
+    </text>
+  </g>
+
+
+  <!-- ======================================================
+       2025 — LARGE-SCALE DATA ANALYSIS
+  ======================================================= -->
+
+  <line
+    class="timeline-branch branch-2025"
+    x1="625"
+    y1="480"
+    x2="625"
+    y2="418"
+    pathLength="1"
+  />
+
+  <g class="timeline-content content-2025">
+    <circle
+      class="node"
+      cx="625"
+      cy="480"
+      r="5.25"
+    />
+
+    <text
+      class="mono timeline-label"
+      x="625"
+      y="379"
+      text-anchor="middle"
+    >
+      large-scale
+    </text>
+
+    <text
+      class="mono timeline-label"
+      x="625"
+      y="402"
+      text-anchor="middle"
+    >
+      data analysis
+    </text>
+
+    <text
+      class="mono timeline-year"
+      x="625"
+      y="508"
+      text-anchor="middle"
+    >
+      2025
+    </text>
+  </g>
+
+
+  <!-- ======================================================
+       2026 — miRdeX-nf RELEASE
+  ======================================================= -->
+
+  <line
+    class="timeline-branch branch-2026"
+    x1="755"
+    y1="480"
+    x2="755"
+    y2="542"
+    pathLength="1"
+  />
+
+  <g class="timeline-content content-2026">
+    <circle
+      class="node"
+      cx="755"
+      cy="480"
+      r="5.25"
+    />
+
+    <text
+      class="mono timeline-year"
+      x="755"
+      y="458"
+      text-anchor="middle"
+    >
+      2026
+    </text>
+
+    <text
+      class="mono timeline-label"
+      x="755"
+      y="579"
+      text-anchor="middle"
+    >
+      miRdeX-nf release
+    </text>
+  </g>
+
+
+  <!-- ======================================================
+       2027 — MACHINE LEARNING
+  ======================================================= -->
+
+  <line
+    class="timeline-branch branch-2027"
+    x1="885"
+    y1="480"
+    x2="885"
+    y2="418"
+    pathLength="1"
+  />
+
+  <circle
+    class="pulse-ring"
+    cx="885"
+    cy="480"
+    r="5.25"
+  />
+
+  <g class="timeline-content content-2027">
+    <circle
+      class="node"
+      cx="885"
+      cy="480"
+      r="5.25"
+    />
+
+    <text
+      class="mono timeline-label"
+      x="885"
+      y="379"
+      text-anchor="middle"
+    >
+      Machine learning
+    </text>
+
+    <text
+      class="mono timeline-label"
+      x="885"
+      y="402"
+      text-anchor="middle"
+    >
+      for sRNA data
+    </text>
+
+    <text
+      class="mono timeline-year"
+      x="885"
+      y="508"
+      text-anchor="middle"
+    >
+      2027
+    </text>
+  </g>
+
+</svg>

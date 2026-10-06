@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+  viewBox="0 0 1000 343"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="Antonio González — Bioinformatician and PhD student"
+>
+
+  <defs>
+
+    <!--
+      The name is revealed through this clipping rectangle.
+      Its width grows in exactly 16 steps.
+    -->
+    <clipPath id="name-typewriter-clip">
+      <rect
+        class="name-typewriter-mask"
+        x="48"
+        y="105"
+        width="0"
+        height="90"
+      />
+    </clipPath>
+
+  </defs>
+
+
+  <style>
+    :root {
+      --text: #ffffff;
+      --muted: #ffffff;
+      --rule: #ffffff;
+    }
+
+    .mono {
+      font-family:
+        ui-monospace,
+        "SFMono-Regular",
+        "SF Mono",
+        Menlo,
+        Consolas,
+        "Liberation Mono",
+        monospace;
+    }
+
+    .meta {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 3.5px;
+    }
+
+    .name {
+      font-size: 72px;
+      font-weight: 400;
+      letter-spacing: -2px;
+    }
+
+    .subtitle {
+      font-size: 19px;
+      font-weight: 400;
+    }
+
+    .keywords {
+      font-size: 12.5px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .rule {
+      stroke: var(--rule);
+      stroke-width: 1;
+    }
+
+
+    /* ======================================================
+       TOP + BOTTOM LINES ANIMATION
+       Both lines appear first, at the same time
+    ======================================================= */
+
+    .top-rule-animated,
+    .bottom-rule-animated {
+      stroke: var(--rule);
+      stroke-width: 1;
+      fill: none;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw-rule 0.75s ease-out 0.15s forwards;
+    }
+
+    @keyframes draw-rule {
+      from {
+        stroke-dashoffset: 1;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+
+    /* ======================================================
+       NAME — TYPEWRITER
+    ======================================================= */
+
+    /*
+      "Antonio González" has 16 character positions:
+
+      Antonio  = 7
+      space    = 1
+      González = 8
+
+      Total = 16
+
+      The text width is fixed at 640 units,
+      therefore every typewriter step advances 40 units.
+    */
+
+    .name-typewriter-mask {
+      animation:
+        type-name
+        1.20s
+        steps(16, end)
+        1.05s
+        forwards;
+    }
+
+    @keyframes type-name {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 640px;
+      }
+    }
+
+
+    /* ======================================================
+       TYPEWRITER CURSOR
+    ======================================================= */
+
+    .name-cursor {
+      fill: var(--text);
+      opacity: 0;
+
+      animation:
+        cursor-move
+        1.20s
+        steps(16, end)
+        1.05s
+        forwards,
+        cursor-visibility
+        1.20s
+        linear
+        1.05s
+        forwards;
+    }
+
+    @keyframes cursor-move {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(640px);
+      }
+    }
+
+    @keyframes cursor-visibility {
+      0% {
+        opacity: 1;
+      }
+
+      96% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+
+    /* ======================================================
+       OTHER TEXT
+    ======================================================= */
+
+    .intro-line {
+      opacity: 0;
+      animation:
+        reveal-line
+        0.45s
+        ease-out
+        forwards;
+    }
+
+    .intro-line-1 {
+      animation-delay: 2.50s;
+    }
+
+    .intro-line-2 {
+      animation-delay: 2.75s;
+    }
+
+    .intro-line-3 {
+      animation-delay: 3.00s;
+    }
+
+    @keyframes reveal-line {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+  </style>
+
+
+  <!-- ======================================================
+       META
+       Visible immediately
+  ======================================================= -->
+
+  <text
+    class="mono meta"
+    x="48"
+    y="44"
+    fill="var(--muted)"
+  >
+    GITHUB PROFILE — ANTOGLZ
+  </text>
+
+  <text
+    class="mono meta"
+    x="952"
+    y="44"
+    fill="var(--muted)"
+    text-anchor="end"
+  >
+    VALENCIA, ES
+  </text>
+
+
+  <!-- ======================================================
+       TOP LINE
+  ======================================================= -->
+
+  <line
+    class="top-rule-animated"
+    x1="48"
+    y1="58"
+    x2="952"
+    y2="58"
+    pathLength="1"
+  />
+
+
+  <!-- ======================================================
+       NAME — TYPEWRITER
+  ======================================================= -->
+
+  <g clip-path="url(#name-typewriter-clip)">
+    <text
+      class="mono name"
+      x="48"
+      y="176"
+      fill="var(--text)"
+      textLength="640"
+      lengthAdjust="spacingAndGlyphs"
+    >
+      Antonio González
+    </text>
+  </g>
+
+
+  <!--
+       Cursor starts at x=48 and advances
+       exactly with the clipping mask.
+  -->
+
+  <rect
+    class="name-cursor"
+    x="48"
+    y="117"
+    width="4"
+    height="64"
+  />
+
+
+  <!-- ======================================================
+       SUBTITLE
+  ======================================================= -->
+
+  <text
+    class="mono subtitle intro-line intro-line-1"
+    x="48"
+    y="214"
+    fill="var(--text)"
+  >
+    Bioinformatician — PhD student
+  </text>
+
+
+  <!-- ======================================================
+       KEYWORDS
+  ======================================================= -->
+
+  <text
+    class="mono keywords intro-line intro-line-2"
+    x="48"
+    y="274"
+    fill="var(--text)"
+  >
+    small ncRNA · RNA-seq · computational biology · workflow development · HPC
+  </text>
+
+  <text
+    class="mono keywords intro-line intro-line-3"
+    x="48"
+    y="300"
+    fill="var(--text)"
+  >
+    reproducible research · machine learning
+  </text>
+
+
+  <!-- ======================================================
+       BOTTOM LINE
+  ======================================================= -->
+
+  <line
+    class="bottom-rule-animated"
+    x1="48"
+    y1="342"
+    x2="952"
+    y2="342"
+    pathLength="1"
+  />
+
+</svg>
